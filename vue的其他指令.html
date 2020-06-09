@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+        <div id="app">
+            <h1 v-if="awesome">Vue is awesome!</h1>
+            <h1 v-else>Oh no 😢</h1>
+            <h1 v-show="ok">Hello!</h1>
+
+<!--    
+        v-if  是涉及到 标签是否被渲染  if为真 标签被渲染出来
+        v-show  是简单的css样式的改变  display / none
+-->
+
+<!--   
+    in 或者 of  都是合法的分割符
+
+        d 是数组中的每一个元素
+        i 是数组的下标
+-->
+        <h1  v-for="(d,i) in items">{{d}}</h1>
+
+        
+        </div>
+        <script >
+            new Vue({
+                el:"#app",
+                data: {
+                    awesome:false  ,
+                    ok:false,
+                    items:[1,2,3,4,45]
+                },
+                methods: {
+                    
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+        <div id="app">
+            <input v-model="data1">
+               <select v-model="opt">
+                   <option value="1">+</option>
+                   <option value="2">-</option>
+                   <option value="3">*</option>
+                   <option value="4">/</option>
+               </select>
+             <input v-model="data2" >
+             <button  @click="ccl">=</button>
+             <h1>{{result}}</h1> 
+        </div>
+        <script>
+                new Vue({
+                    el:"#app",
+                    data:{
+                        data1:"",
+                        data2:"",
+                        opt:1,
+                        result:""
+                    },
+                    methods: {
+                        ccl(){
+                            // 判断运算符
+
+                            // 做对应的操作
+
+                            // 修改result的值
+                            this.result=parseInt(this.data1)+ parseInt (this.data2)
+                        }  
+                    }
+                })
+
+        </script>
+</body>
+</html>

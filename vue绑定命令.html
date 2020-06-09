@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .a1{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        .a2{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+        .a3{
+            border: 1px solid yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--  通过 v-bind指令将标签的属性和 data 中属性值绑定到一起 
+                v-bind 指令有一个简写形式 " : "
+                v-on ====>  @
+        -->
+            <div   class="static"  :class='{a1:cn,a3:cn}'  id="aa">
+            </div>
+
+        <div :style="{backgroundColor:colorName,height:hNum,width:wNum}">
+
+            1111111
+        </div>
+            <button  @click="change">点击跟换样式</button>
+        <!-- v-model 指令  双向绑定  -->
+            <input type="text"  v-model="data1">
+        <h1>{{data1}}</h1>
+    </div>
+
+    <script >
+        // v-bind   绑定属性
+            new Vue({
+                el:"#app",
+                data:{
+                        cn:true,
+                        data1:"快开学了！",
+                        colorName:"red",
+                        wNum:"100px",
+                        hNum:"100px"
+                },
+                methods: {
+                change(){
+                    // 在这个里面写更换div样式的代码
+                    this.cn="a2"
+                } 
+                }
+            })
+
+    /***
+    
+            vue  会通过对象的方式  将这个页面描述在内存中 
+
+            var  HTM = {
+                HTML:[
+                    {head:xxxx},
+                   
+                    {body:[{div:xxx},{p:xxx},{h1:xxx}]}
+                ]
+            }
+
+
+    
+    */
+
+
+
+    </script>
+</body>
+</html>
